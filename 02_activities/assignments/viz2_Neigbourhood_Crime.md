@@ -2,21 +2,21 @@ For each visualization, describe and justify:
 Neighbourhood Crime Rate
 https://open.toronto.ca/dataset/neighbourhood-crime-rates/
 A multi-line chart of seven crime types in Toronto from 2014 to 2025, each indexed to its 2014 level.
-> What software did you use to create your data visualization?
+**What software did you use to create your data visualization?**
 Excel
-> Who is your intended audience? 
+**Who is your intended audience?**
 Toronto residents, city policymakers, and local journalists interested in how crime has shifted over the past decade. The indexed view assumes basic comfort with "relative to a baseline," so it targets an informed public and policy audience.    
-> What information or message are you trying to convey with your visualization? 
+**What information or message are you trying to convey with your visualization?** 
 Toronto crime did not move as a single trend, it diverged. Auto theft, theft over $5k, and assault rose, while bike theft, robbery, theft from vehicles, and break-and-enter fell. Auto theft is the centrepiece, which is highlighted in the viz, it roughly tripled by 2023 before falling back.  
-> What aspects of design did you consider when making your visualization? How did you apply them? With what elements of your plots? 
+**What aspects of design did you consider when making your visualization? How did you apply them? With what elements of your plots?**
 I indexed every crime to 2014 = 100 so that crimes of very different magnitudes share one comparable scale. Because on raw values, the larger crimes would dominiate and flatten the rest. Rebasing them all to a common starting point of 100 makes the divergence between rising and falliing visible. I encoded direction with colour, warm hues for rising crimes, cool for falling, so the up and down split reads before any label does. I used visual hierarchy, making auto theft a thick red "hero" line to anchor the eye. I also added a message-driven title, a labelled y-axis, a clear legend, light dashed gridlines.    
-> How did you ensure that your data visualizations are reproducible? If the tool you used to make your data visualization is not reproducible, how will this impact your data visualization? 
+**How did you ensure that your data visualizations are reproducible? If the tool you used to make your data visualization is not reproducible, how will this impact your data visualization?** 
 The data preparation is documented and formula-driven: the AVERAGE formulas referencing specific rate columns, and the index formulas. Anyone with the same raw file could repeat these steps and get the same table. However, unlike the Python chart, this visualization by Excel is not a single re-runnable script; the styling is done by hand and isn't captured in code, so a re-creation could look slightly different. I mitigated this by documenting each step explicitly. I also captioned the chart with its data source, so any reader can trace the visualization back to the original dataset.  
-> How did you ensure that your data visualization is accessible?  
+**How did you ensure that your data visualization is accessible?**  
 The warm/cool colour split differs in brightness as well as hue, so the rising-vs-falling distinction survives for viewers with colour-vision deficiency, the legend and the emphasised line reinforce it. I used readable font sizes, a clear legend, and also highlight the line with sharp changes.    
-> Who are the individuals and communities who might be impacted by your visualization?  
+**Who are the individuals and communities who might be impacted by your visualization?**  
 Crime statistics shape public perception, policing priorities, insurance, and property values, so residents, police, and policymakers are all affected. I deliberately kept the chart city-wide by crime type rather than by neighbourhood, which avoids stigmatising specific communities, and I showed divergence to give a more honest picture.    
-> How did you choose which features of your chosen dataset to include or exclude from your visualization? 
+**How did you choose which features of your chosen dataset to include or exclude from your visualization?**
 I choose this dataset because I care about the safty as I am considering about moving to a new place. In this visualization, I used population-adjusted rates rather than raw counts so the comparison is fair. I included the seven highest-volume crime types and excluded homicide and shooting, whose low counts make year-to-year rates volatile and hard to read on the same scale. I also excluded the neighbourhood and geometry detail, which a city-wide temporal story doesn't need and which could stigmatise areas.   
-> What ‘underwater labour’ contributed to your final data visualization product?
+**What ‘underwater labour’ contributed to your final data visualization product?**
 The underwater labour includes, locating the right rate columns among 221; diagnosing and fixing a broken CSV import; deciding to use rates, to index, and which crimes to drop; writing and verifying the averaging and index formulas; and manually styling the chart and adding attribution.
